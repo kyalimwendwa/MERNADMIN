@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="register.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sign up</title>
+  </head>
+  <body>
+
+    <form action="/submit" method="POST" class="signup-form" >
+      <% if (errors && errors.length > 0) { %>
+        <div class="error">
+            <ul>
+                <% errors.forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
+
+      <h1>Create an account</h1>
+        <label for="username">Username</label>
+        <input type="text" id="name" placeholder="jsmith" name="name" required/>
+      
+      
+        <label for="email">Email address</label>
+        <input type="email" id ="email" placeholder="jsmith@gmail.com" name="email" required/>
+      
+      
+        <label for="password">Password</label>
+        <input type="password" id="password"  placeholder="Enter password" name="password" required/>
+      
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password"  placeholder="Confirm password" name="confirm-password" required/>
+        
+      
+  
+        <button type="submit">Sign up</button>
+        <div class="form-finish">
+            <p class="account">
+                Already have an account?&nbsp
+                <a
+                  href="/loginpage"
+                  
+                >
+                  Login
+            </a>
+              </p>
+              <p class="create">By creating an account, you agree to  <br />Luxoria&nbsp
+              <a
+                href=""
+                  
+                >
+                 conditions of use
+              </a>&nbspand&nbsp 
+                <a
+                  href=""
+                
+                >
+                  privacy notice.
+            </a></p>
+          </div>
+      </form>
+      
+     
+  </body>
+</html>

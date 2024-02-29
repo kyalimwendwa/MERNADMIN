@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Products</title>
+    <style>
+      .column-left {
+       overflow-y: scroll;
+       scrollbar-color: #edeeef;
+       scrollbar-width: thin;
+      /* Adjust the height as needed */
+       padding-right: 1rem;
+   }
+   
+   .column-left::-webkit-scrollbar {
+       width: 12px;
+       height: 2px;
+   }
+   
+   .column-left::-webkit-scrollbar-thumb {
+     background-color: #edeeef;
+       border-radius: 0;
+       border: none;
+       outline: none;
+       height: 25%;
+   }
+   
+   .column-left::-webkit-scrollbar-track {
+       background-color: #fff;
+   }
+   
+       .tilted-svg {
+         transform: rotate(-45deg);
+       }
+       #fileInput {
+               display: none;
+           }
+   
+           /* Style for the custom-styled button or label */
+           #customButton {
+               background-color: #fff;
+               color: #213047;
+               padding: 10px 15px;
+               cursor: pointer;
+               border-radius: 5px;
+               display: inline-block;
+           }
+   
+           /* Style for hover effect */
+           #customButton:hover {
+               color: #457cdb;
+           }
+   
+           .arrow-up,
+  .arrow-down {
+    cursor: pointer;
+  }
+      /* styles.css */
+
+/* styles.css */
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .pagination button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #acbebe;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+
+  .pagination button.active {
+    background-color: #2596be;
+    color: #fff;
+    border-color: #2596be;
+  }
+  .pagination-container .button{
+    border: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .pagination-container .button:hover{
+    background-color: #457cdb;
+    cursor: pointer;
+  }
+ 
+    </style>
+   
+   </head>
+   
+   <body>
+   
+    <div class="column-left">
+      <div class="container">
+       <div class="logo">Ad<span>min</span></div>
+   
+   
+     
+       <div class="panel" style="margin-top: 2rem;">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#213047" class="bi bi-house" viewBox="0 0 16 16">
+             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+           </svg>
+           Dashboard
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="#">Overview</a>
+           <a href="#">Leaderboard</a>
+           
+         </div>
+       </div>
+       
+       <p style="display: flex; font-size: 12px; text-align: left; color: #213047; margin-top: 1rem; margin-bottom: 1rem;">PAGES</p>
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+           </svg>
+           Profile
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="#">Overview</a>
+           <a href="#">Account</a>
+         
+           
+         </div>
+       </div>
+       
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg  style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+             <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+           </svg>
+           Products
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="/allproducts">Products</a>
+           <a href="/productdetails">Product Details</a>
+           <a href="/products">Add Product</a>
+           
+           
+           
+         </div>
+       </div>
+   
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg  style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+           </svg>
+           Deals
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="/alldeals">Deals</a>
+           <a href="/dealdetails">Deal Details</a>
+           <a href="/deals">Add Deal</a>
+           
+           
+           
+         </div>
+       </div>
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+             <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+             <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+           </svg>
+           Orders
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="/orders">Orders</a>
+           <a href="/orderdetails">Order Detail</a>
+           
+         </div>
+       </div>
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-heart" viewBox="0 0 16 16">
+             <path d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4m13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z"/>
+           </svg>
+           Customers
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="/customers">Customers</a>
+           <a href="#">Customers Details</a>
+          
+         </div>
+       </div>
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+             <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
+             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+             <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
+           </svg>
+           Payment & Biling
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="#">Payment </a>
+           <a href="#">Payment pending</a>
+           <a href="#">Change payment status</a>
+           
+         </div>
+       </div>
+   
+       <div class="panel">
+         <div class="dropdown-header" onclick="toggleDropdown(this)">
+           <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1e1f23" class="bi bi-pie-chart" viewBox="0 0 16 16">
+             <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0V7.5h6.482A7 7 0 0 0 8.5 1.018M14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/>
+           </svg>
+           Charts
+           <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#1e1f23" class="dropdown-arrow" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+           </svg>
+         </div>
+         <div class="dropdown-links">
+           <a href="#">Overview</a>
+           <a href="#">Orders</a>
+           <a href="#">Payments</a>
+           <a href="#">Customers</a>
+         </div>
+       </div>
+   
+     
+      
+      </div>
+       
+       <!-- Other panels go here -->
+     </div>
+
+   
+   <div class="column-right" style="background-color: #fff;">
+    <div class="container" style="display: block; border: 1px solid #acbebe; border-radius: 8px; width: max-content;">
+
+      <div class="flex" style="display: flex; padding: 2rem;">
+        <input type="text" id="searchInput" placeholder="Search by name..."  style="display: flex;
+        width: 200px; border-bottom: 1px solid #acbebe; outline: none; border-top: none;
+        border-right: none;
+        border-left: none; height: 40px;
+        padding: 1rem;">
+      </div>
+        <!-- Add search box -->
+
+        <table style="margin-top: 1rem; ">
+            <thead style="height: 50px; border-left: none; border-right: none; border-top: 1px solid #acbebe;
+            border-bottom: 1px solid #acbebe; width: 100%;
+            background-color: #f8fafd; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; ">
+              <tr class="tr1">
+                <th><input type="checkbox" style="border: 1px solid #acbebe; width: 13px; height: 13px; border-radius: 5px; outline: none;
+                  background-color: #fff;
+                  "></th>
+                <th>IMAGE</th>
+                <th style="width: 150px;">NAME</th>
+                <th>CATEGORY</th>
+                <th>STOCK</th>
+                <th>PRICE</th>
+                
+                <th>ACTIONS</th>
+            </tr>
+            </thead>
+            <tbody id="customerTableBody">
+              <% products.forEach(product => { %>
+                <tr class="tr2">
+                  <td><input type="checkbox" style="border: 1px solid #acbebe; width: 13px; height: 13px; border-radius: 5px; outline: none;
+                    background-color: #fff;
+                    "></td>
+                    <td><img src="data:<%= product.mainImage.contentType %>;base64,<%= product.mainImage.data.toString('base64') %>" alt="Product Image"></td>
+
+
+                    <td style="width: 100px;"><%= product.name %></td>
+
+                    <td><%= product.category %></td>
+                    <td><%= product.stock %></td>
+                    <td><%= product.price %></td>
+                    
+                    <td>
+                        <div class="flex" style="display: flex;  justify-content: center; align-items: center;">
+                            <div onclick="redirectToOrderDetails('<%= product.name %>')" class="view" style="width: 80px; height: 35px; border: 1px solid #acbebe; display: flex; justify-content: center; align-items: center; border-bottom-left-radius: 5px; border-top-left-radius: 5px;">
+                                <svg class="path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#acbebe"><path d="M12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3ZM12.0003 19C16.2359 19 19.8603 16.052 20.7777 12C19.8603 7.94803 16.2359 5 12.0003 5C7.7646 5 4.14022 7.94803 3.22278 12C4.14022 16.052 7.7646 19 12.0003 19ZM12.0003 16.5C9.51498 16.5 7.50026 14.4853 7.50026 12C7.50026 9.51472 9.51498 7.5 12.0003 7.5C14.4855 7.5 16.5003 9.51472 16.5003 12C16.5003 14.4853 14.4855 16.5 12.0003 16.5ZM12.0003 14.5C13.381 14.5 14.5003 13.3807 14.5003 12C14.5003 10.6193 13.381 9.5 12.0003 9.5C10.6196 9.5 9.50026 10.6193 9.50026 12C9.50026 13.3807 10.6196 14.5 12.0003 14.5Z"></path></svg>
+                            </div>
+                            <div class="arrow" style="width: 30px; height: 35px; border: 1px solid #acbebe; display: flex; justify-content: center; align-items: center;border-left: none; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                <svg class="path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#acbebe"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+
+        <div class="pagination-container">
+          <button id="prevButton" class="button">Prev</button>
+          <div class="pagination"></div>
+          <button id="nextButton" class="button">Next</button>
+        </div>
+
+    </div>
+
+    <div class="dropdown-menu dropdown-menu-end dropdown-card" aria-labelledby="showHideDropdown" style=" display: none;    width: 15rem;">
+      <div class="card card-sm">
+        <div class="card-body">
+          <div class="d-grid gap-3">
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_order">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Order</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_order" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_date">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Date</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_date" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_customer">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Customer</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_customer" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_payment_status">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Payment status</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_payment_status" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_fulfillment_status">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Payment status</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_fulfillment_status" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_payment_method">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Payment method</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_payment_method" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_total">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Total</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_total">
+              </span>
+            </label>
+            <!-- End Form Switch -->
+
+            <!-- Form Switch -->
+            <label class="row form-check form-switch" for="toggleColumn_actions">
+              <span class="col-8 col-sm-9 ms-0">
+                <span class="me-2">Actions</span>
+              </span>
+              <span class="col-4 col-sm-3 text-end">
+                <input type="checkbox" class="form-check-input" id="toggleColumn_actions" checked>
+              </span>
+            </label>
+            <!-- End Form Switch -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </div>
+   
+  
+   
+
+   <!-- Your HTML code remains unchanged -->
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Define the number of rows to display per page
+      var rowsPerPage = 6;
+  
+      // Get all rows in the table body
+      var rows = document.querySelectorAll("#customerTableBody tr");
+  
+      // Calculate the total number of pages
+      var totalPages = Math.ceil(rows.length / rowsPerPage);
+  
+      // Initialize the current page
+      var currentPage = 1;
+  
+      // Function to show rows based on the current page
+      function showRows() {
+        var startIndex = (currentPage - 1) * rowsPerPage;
+        var endIndex = startIndex + rowsPerPage;
+  
+        // Hide all rows
+        rows.forEach(function (row, index) {
+          if (index >= startIndex && index < endIndex) {
+            row.style.display = "table-row";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      }
+  
+      // Initial display
+      showRows();
+  
+      // Create pagination buttons dynamically
+      var paginationDiv = document.querySelector('.pagination');
+      for (var i = 1; i <= totalPages; i++) {
+        var button = document.createElement('button');
+        button.textContent = i;
+        button.addEventListener('click', function () {
+          // Remove 'active' class from all buttons
+          paginationDiv.querySelectorAll('button').forEach(function (btn) {
+            btn.classList.remove('active');
+          });
+  
+          // Set 'active' class to the clicked button
+          this.classList.add('active');
+  
+          currentPage = parseInt(this.textContent);
+          showRows();
+        });
+        paginationDiv.appendChild(button);
+      }
+  
+      // Get the next and previous buttons by their IDs
+      var nextButton = document.getElementById("nextButton");
+      var prevButton = document.getElementById("prevButton");
+  
+      // Attach event listener to the next button
+      nextButton.addEventListener("click", function () {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showRows();
+        }
+      });
+  
+      // Attach event listener to the previous button
+      prevButton.addEventListener("click", function () {
+        if (currentPage > 1) {
+          currentPage--;
+          showRows();
+        }
+      });
+    });
+  </script>
+ 
+ <script>
+  function redirectToOrderDetails(name) {
+    // Construct the URL for the carddetails page with the cartId parameter
+    var url = '/productdetails?name=' + encodeURIComponent(name);
+
+    // Redirect to the carddetails page
+    window.location.href = url;
+  }
+</script>
+
+ <script src="/util.js"></script>
+
+   
+
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script>
+    $(document).ready(function () {
+      $('#searchInput').on('input', function () {
+        var searchText = $(this).val().toLowerCase();
+        $('#customerTableBody tr').hide();
+  
+        $('#customerTableBody tr').each(function (index) {
+          var customerName = $(this).find('td:eq(2)').text().toLowerCase();
+          var orderDate = $(this).find('td:eq(1)').text().toLowerCase();
+  
+          if (customerName.includes(searchText) || orderDate.includes(searchText)) {
+            $(this).show();
+          }
+        });
+      });
+    });
+  </script>
+  
+   
+ 
+  
+
+
+   
+
+ 
+
+<script src="/script.js"></script>
+
+
+
+</body>
+</html>

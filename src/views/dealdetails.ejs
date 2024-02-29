@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Update Deals</title>
+  <style>
+   .column-left {
+    overflow-y: scroll;
+    scrollbar-color: #edeeef;
+    scrollbar-width: thin;
+   /* Adjust the height as needed */
+    padding-right: 1rem;
+}
+
+.column-left::-webkit-scrollbar {
+    width: 12px;
+    height: 2px;
+}
+
+.column-left::-webkit-scrollbar-thumb {
+  background-color: #edeeef;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    height: 25%;
+}
+
+.column-left::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+    .tilted-svg {
+      transform: rotate(-45deg);
+    }
+    #fileInput {
+            display: none;
+        }
+
+        /* Style for the custom-styled button or label */
+        #customButton {
+            background-color: #fff;
+            color: #213047;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Style for hover effect */
+        #customButton:hover {
+            color: #457cdb;
+        }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="column-left">
+    <div class="container">
+     <div class="logo">Ad<span>min</span></div>
+ 
+ 
+   
+     <div class="panel" style="margin-top: 2rem;">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#213047" class="bi bi-house" viewBox="0 0 16 16">
+           <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+         </svg>
+         Dashboard
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="#">Overview</a>
+         <a href="#">Leaderboard</a>
+         
+       </div>
+     </div>
+     
+     <p style="display: flex; font-size: 12px; text-align: left; color: #213047; margin-top: 1rem; margin-bottom: 1rem;">PAGES</p>
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+           <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+         </svg>
+         Profile
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="#">Overview</a>
+         <a href="#">Account</a>
+       
+         
+       </div>
+     </div>
+     
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg  style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+           <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+         </svg>
+         Products
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="/allproducts">Products</a>
+         <a href="/productdetails">Product Details</a>
+         <a href="/products">Add Product</a>
+         
+         
+         
+       </div>
+     </div>
+ 
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg  style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+         </svg>
+         Deals
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="/alldeals">Deals</a>
+         <a href="/dealdetails">Deal Details</a>
+         <a href="/deals">Add Deal</a>
+         
+         
+         
+       </div>
+     </div>
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+           <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+           <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+         </svg>
+         Orders
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="/orders">Orders</a>
+         <a href="/orderdetails">Order Detail</a>
+         
+       </div>
+     </div>
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-heart" viewBox="0 0 16 16">
+           <path d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4m13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z"/>
+         </svg>
+         Customers
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="/customers">Customers</a>
+         <a href="#">Customers Details</a>
+        
+       </div>
+     </div>
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+           <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
+           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+           <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
+         </svg>
+         Payment & Biling
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="#">Payment </a>
+         <a href="#">Payment pending</a>
+         <a href="#">Change payment status</a>
+         
+       </div>
+     </div>
+ 
+     <div class="panel">
+       <div class="dropdown-header" onclick="toggleDropdown(this)">
+         <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1e1f23" class="bi bi-pie-chart" viewBox="0 0 16 16">
+           <path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793zm1 0V7.5h6.482A7 7 0 0 0 8.5 1.018M14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/>
+         </svg>
+         Charts
+         <svg   xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#1e1f23" class="dropdown-arrow" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+         </svg>
+       </div>
+       <div class="dropdown-links">
+         <a href="#">Overview</a>
+         <a href="#">Orders</a>
+         <a href="#">Payments</a>
+         <a href="#">Customers</a>
+       </div>
+     </div>
+ 
+   
+    
+    </div>
+     
+     <!-- Other panels go here -->
+   </div>
+
+  <div class="column-right">
+    <div class="flex" style="display: block; border: 1px solid #acbebe; height: max-content; background-color: #fff; padding: 1rem;">
+      <div class="flex" style="display: flex; align-items: center; gap: 5px; font-size: 14px; color: #acbebe;">
+        <a href="">Deals</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-slash-lg tilted-svg" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0"/>
+        </svg>
+        <p style="color: #213047;">Update Deal</p>
+      </div>
+      
+      <h1 style="display: flex; text-align: left; font-size: 24px;color: #213047;">Update Product</h1>
+    </div>
+    <% if (deal) { %>
+    <form  class="signup-form" id="orderForm" enctype="multipart/form-data">
+        
+      <div class="div__left" >
+
+         <div class="flex" style="display: block; border-radius: 8px; border: 1px solid #acbebe; height: max-content; background-color: #fff;width: 650px; height: max-content;">
+             
+          <div class="prodInfo" style="display: flex; border-bottom: 1px solid #acbebe; width: 100%; height: 50px;padding: 1rem; ">
+            <h1 style="display: flex; text-align: left; font-size: 16px;color: #213047; font-weight: 500; ">Product Information</h1>
+          </div>
+          
+
+          <div class="info" style="padding: 2rem;width: 100%;">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="<%= deal.name%>">
+        
+           
+              <label for="category">Category</label>
+              <div class="select-menu">
+                <div  class="selectbtn"  >
+                  <span class="sBtntext" style="font-size: 13px;" id="category" name="category" ><%= deal.category%></span>
+                  <svg   xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#213047" class="dropdown-arrow" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                  </svg>
+                </div>
+                 
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">
+                        Sectionals
+                      </span>
+                      
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Sofas</span>
+                      </li>
+                    <li class="option"><span class="option-text">Chairs</span></li>
+                    <li class="option"><span class="option-text">Tv Stands</span></li>
+                    <li class="option"><span class="option-text">Coffee Table</span></li>
+                    <li class="option"><span class="option-text">Dining Chairs</span></li>
+                    <li class="option"><span class="option-text">Dining Tables</span></li>
+                    <li class="option"><span class="option-text">Table sets</span></li>
+                    <li class="option"><span class="option-text">Beds</span></li>
+                    <li class="option"><span class="option-text">Outdoor Sectionals</span></li>
+                    <li class="option"><span class="option-text">Outdoor Chairs</span></li>
+                    <li class="option"><span class="option-text">Outdoor Sets</span></li>
+                    <li class="option"><span class="option-text">Office Tables</span></li>
+                    <li class="option"><span class="option-text">Office Chairs</span></li>
+                    <li class="option"><span class="option-text">Office Sets</span></li>
+                  </ul>
+                  
+               
+
+
+              </div>
+              
+                
+            
+            <label for="description">Description</label>
+            <textarea name="description" rows="4" ><%= deal.description%></textarea>
+
+             <div class="flex" style="width: 100%; height: max-content; border: 1px solid #acbebe; border-radius: 8px;">
+              <div class="prodInfo" style="display: flex; border-bottom: 1px solid #acbebe; width: 100%; height: 50px;padding: 1rem; ">
+                <h1 style="display: flex; text-align: left; font-size: 16px;color: #213047; font-weight: 500;">Media</h1>
+              </div>
+              
+                <div class="imgcontainer"  style="display: block; width: 100%; height: max-content; border-radius: 8px; padding: 1rem; ">
+                  <div class="lablei" style=" display: block;background-color: #f0f2f9; border-radius: 8px; border: 3px dotted #ddd; align-items: center; justify-content: center;">
+                    <img src="data:<%= deal.mainImage.contentType %>;base64,<%= deal.mainImage.data.toString('base64') %>" alt="Product Image" style="width: 100%; height: 100%;">
+                    
+                </div>
+                
+                
+                  
+      
+                  
+                </div>
+             </div>
+           
+          
+             <div class="flex" style="width: 100%; height: max-content; border: 1px solid #acbebe; border-radius: 8px; margin-top: 2rem;">
+              <div class="prodInfo" style="display: flex; border-bottom: 1px solid #acbebe; width: 100%; height: 50px;padding: 1rem; ">
+                <h1 style="display: flex; text-align: left; font-size: 16px;color: #213047;font-weight: 500; ">Dimensions</h1>
+              </div>
+                <div class="dimensions" style="padding: 2rem;">
+                  <div class="flex" style="display: flex; gap: 2rem;">
+                    <div class="flex">
+                      <label for="dimensions">Dimensions(in):</label>
+                      <input type="text" name="dimensions"  value="<%= deal.dimensions%>">
+                    </div>
+        
+                    <div class="flex">
+                      <label for="weight">Weight:</label>
+                      <input type="text" name="weight" value="<%= deal.weight%>" >
+                    </div>
+        
+                    <div class="flex">
+                      <label for="width">Product Width(in):</label>
+                      <input type="text" name="width" value="<%= deal.width%>">
+                    </div>
+        
+                  </div>
+        
+                  <div class="flex" style="display: flex; gap: 2rem;">
+                   <div class="flex">
+                    <label for="height">Product Height(in):</label>
+                    <input type="text" name="height"  value="<%= deal.height%>">
+                   </div>
+                   <div class="flex">
+                    <label for="depth">Product Depth(in):</label>
+                    <input type="text" name="depth" value="<%= deal.depth%>">
+                   </div>
+        
+        
+        
+                  </div>
+
+                </div>
+                
+             </div>
+
+
+          
+
+          </div>
+   
+
+          
+   
+
+
+   
+
+
+         
+        </div>
+
+      </div>
+
+      <div class="div__right" style="width: 400px;">
+
+
+        <div class="flex" style="width: 100%; height: max-content; border: 1px solid #acbebe; border-radius: 8px;">
+          <div class="prodInfo" style="display: flex; border-bottom: 1px solid #acbebe; width: 100%; height: 50px;padding: 1rem; ">
+            <h1 style="display: flex; text-align: left; font-size: 16px;color: #213047;font-weight: 500; ">Styling</h1>
+          </div>
+            <div class="styling" style="padding: 1rem;" >
+              <div class="flex" style="display: flex; flex-direction: column;">
+                  <label for="style">Style:</label>
+                 <input type="text" name="style"  value="<%= deal.style%>">
+      
+                 <label for="material">Material:</label>
+                <input type="text" name="material"  value="<%= deal.material%>">
+                
+                
+                  <label for="color">Color:</label>
+                  <input type="text" name="color" value="<%= deal.color%>" >
+      
+                  <label for="shape">Shape:</label>
+                  <input type="text" name="shape" value="<%= deal.shape%>" >
+                
+              </div>
+
+            </div>
+            
+         </div>
+
+         <div class="flex" style="width: 100%; height: max-content; border: 1px solid #acbebe; border-radius: 8px; margin-top: 1rem;">
+          <div class="prodInfo" style="display: flex; border-bottom: 1px solid #acbebe; width: 100%; height: 50px;padding: 1rem; ">
+            <h1 style="display: flex; text-align: left; font-size: 16px;color: #213047;font-weight: 500; ">Pricing</h1>
+          </div>
+            <div class="pricing" style="padding: 1rem;" >
+              <div class="flex" style="display: flex; flex-direction: column;">
+
+
+                <div class="flex">
+                <label for="stock">Stock:</label>
+                <input type="number" name="stock"  value="<%= deal.stock%>">
+      
+      
+              </div>
+                <div class="flex">
+                  <label for="price">Price(KES):</label>
+              <input type="number" name="price" value="<%= deal.price%>">
+                </div>
+                <div class="flex">
+                  <label for="discount">Discount offers:</label>
+              <input type="text" name="discount"  value="<%= deal.discount%>">
+                </div>
+      
+      
+      
+      
+      
+              </div>
+
+            </div>
+            
+         </div>
+
+        
+
+
+
+         <div class="flex" style="width: 100%; height: max-content; border: 1px solid #acbebe; border-radius: 8px; margin-top: 1rem;">
+          <div class="prodInfo" style="display: flex; border-bottom: 1px solid #acbebe; width: 100%; height: 50px;padding: 1rem; ">
+            <h1 style="display: flex; text-align: left; font-size: 16px;color: #213047;font-weight: 500; ">Delivery Information</h1>
+          </div>
+            <div class="styling" style="padding: 1rem;" >
+              <div class="flex" style="display: flex;flex-direction: column;">
+                <div class="flex">
+                  <label for="doorway">Minimum Doorway Clearance(in):</label>
+                  <input type="text" name="doorway" value="<%= deal.doorway%>"  >
+                </div>
+                <div class="flex">
+                  <label for="time">Assemble time(Minutes):</label>
+             <input type="text" name="time" value="<%= deal.time%>" >
+                </div>
+             </div>
+              <label for="delivery">What type of assembly is required:</label>
+              <input type="text" name="delivery" value="<%= deal.delivery%>"  >
+
+            </div>
+            
+         </div>
+
+         <button type="submit" id="updateButton">Update</button>
+
+      </div>
+      
+      
+    </form>
+    <% } else { %>
+        <p>No product found</p>
+      <% } %>
+   
+    
+  </div>
+
+<script src="/script.js"></script>
+  <script>
+    function toggleDropdown(header) {
+      const arrow = header.querySelector('.dropdown-arrow');
+      const links = header.nextElementSibling; // Select the dropdown-links div associated with the clicked header
+      const icon = header.querySelector('.bi');
+  
+      if (window.getComputedStyle(links).display === 'none') {
+        links.style.display = 'block';
+        arrow.style.transform = 'rotate(180deg)';
+        icon.style.fill = '#457cdb'; // Change the fill color of the SVG
+        header.style.color = '#457cdb'; // Change the text color
+      } else {
+        links.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+        icon.style.fill = ''; // Reset the fill color of the SVG to default
+        header.style.color = ''; // Reset the text color to default
+      }
+    }
+  </script>
+ 
+
+ <script>
+  const optionMenu=document.querySelector('.select-menu'),
+        selectbtn=optionMenu.querySelector('.selectbtn'),
+        options=optionMenu.querySelectorAll('.option'),
+        sBtntext=optionMenu.querySelector('.sBtntext');
+
+        selectbtn.addEventListener("click",()=>optionMenu.classList.toggle("active"));
+   
+        options.forEach(option=>{
+
+          option.addEventListener("click",()=>{
+              let selectedoption=option.querySelector('.option-text').innerText;
+              sBtntext.innerText=selectedoption;
+              optionMenu.classList.remove("active")
+          })
+
+          })
+         
+      
+        
+
+
+ </script>
+
+</body>
+</html>
+
+    
+  
+ 
+  
+  

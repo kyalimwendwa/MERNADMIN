@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    
+  }
+  body{
+    background-color:#e5eff0;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    height: 100%;
+  }
+  
+  .card{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    background-color: #acbebe;
+    margin-bottom: 50px;
+    
+  }
+ 
+  
+   .swiper-slide {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    background-color: #acbebe;
+    margin-bottom: 50px;
+    
+  }
+ 
+  
+ 
+  
+  .card-content {
+    padding: 20px;
+   
+    
+  }
+  
+
+  .card-content p , span{
+    font-size: 14px;
+    color: #242529;
+    font-weight: bold;
+  }
+   .card-content h1{
+    font-size: 16px;
+    color: #242529;
+    font-weight: bold;
+  }
+  
+ 
+  .slideshow img{
+    width: 50%; /* Adjust the initial width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensure block-level display for centering */
+    margin: 0 auto; /* Center the image horizontally */
+    max-height: 50vh;
+  }
+  
+  .swiper {
+    width: 90%;
+    height: 300px;
+    margin-top: 50px;
+  }
+
+  
+
+  
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after{
+  display: none;
+  
+  position: absolute;
+  top: 10px; /* Adjust the top position to your preference */
+  left: 50%; /* Place the buttons at the horizontal center */
+  transform: translateX(-50%);
+  }

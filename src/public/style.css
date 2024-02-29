@@ -1,0 +1,343 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    
+  }
+  body{
+    background-color:#f0f2f9;
+    font-family: 'Poppins', sans-serif;
+    height: max-content;
+    display: flex;
+  }
+ 
+
+  .column-left {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border-right: 1px solid #acbebe;
+    height: 100vh;
+    background-color: #fff;
+    padding: 1rem;
+    overflow-y: auto; /* Add scrollbar for vertical overflow */
+  }
+  
+  
+  
+  
+  .panel {
+    width: 100%;
+   
+   font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #213047;
+    font-weight: 400;
+  }
+  .dropdown-header:hover{
+    background-color: #edeeef;
+    border-radius: 8px;
+  }
+  
+  .dropdown-arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+  }
+  
+  .dropdown-links {
+    display: none;
+    
+    border: none;
+    color: #213047;
+    outline: none;
+    font-size: 13px;
+    padding-left: 2rem;
+  }
+  
+  .dropdown-links a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #213047;
+    font-size: 13px;
+  }
+  
+  .dropdown-links a:hover {
+    background-color: #edeeef;
+    font-size: 13px;
+    border-radius: 8px;
+    color: #457cdb;
+  }
+
+
+.signup-form h2{
+  font-size: 15px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #213047;
+ 
+}
+.signup-form label{
+  font-size: 13px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #213047;
+  
+}
+.signup-form{
+  height: max-content;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 8px;
+ 
+  display: flex;
+  box-shadow:  #e8edf3;
+  margin-bottom: 50px;
+  margin-top: 3rem;
+  gap: 2rem;
+  
+}
+.signup-form input{
+  height: 40px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #213047;
+  font-size: 13px;
+  font-weight: 400;
+  border: 1px solid #acbebe;
+  
+  outline: none;
+  padding: 5px;
+}
+
+/* Apply padding to the right side of the drop-down icon inside select elements */
+.signup-form .div__left .select-menu {
+  width: 100%;
+  height: 150px  auto;
+   
+ 
+}
+.signup-form .div__left .selectbtn {
+  display: flex;
+  height: 40px;
+  border: 1px solid #acbebe;
+  padding: 20px;
+  
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+ 
+}
+.signup-form .div__left .select-menu .options{
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.signup-form .div__left .select-menu.active .options{
+  display: block;
+}
+.signup-form .div__left .select-menu .options .option{
+  display: flex;
+  height: 45px;
+  cursor: pointer;
+  padding:  0 16px;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.signup-form .div__left .select-menu .options .option:hover{
+  background-color: #f0f2f9;
+}
+
+
+
+.signup-form textarea{
+  height: 200px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  color: #213047;
+  font-size: 13px;
+  font-weight: 400;
+  border: 1px solid #acbebe;
+  
+  outline: none;
+  padding: 1rem;
+}
+.signup-form input:focus{
+  outline: 0;
+  border-color: #213047;
+}
+.signup-form textarea:focus{
+  outline: 0;
+  border-color: #213047;
+}
+.signup-form button{
+  height: 40px;
+  background-color: #213047;
+  font-size: 14px;
+  color: white;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+ cursor: pointer;
+ 
+}
+.signup-form a{
+  color: #213047;
+  text-decoration: none;
+  font-size: 13px;
+}
+ a{
+  color: #213047;
+  text-decoration: none;
+  
+}
+
+.signup-form .div__left{
+  display: block;
+  
+   /* Adjust the width as needed */
+  height: 100%;
+
+}
+.signup-form .div__right{
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+
+  .column-right {
+    float: right;
+    width: 85%; /* Adjust the width as needed */
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    
+    overflow-y: auto; /* Add this line for scrollable content */
+    
+    
+    
+  }
+
+
+  
+
+table {
+   
+    border-collapse: collapse;
+    width: 100%;
+    border: none;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+ td {
+   white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+    padding: 1rem;
+    text-align: left;
+    font-size: 14px;
+    border-left: none; /* Remove left border from all cells */
+    border-right: none;
+    border-bottom: none;
+    color: #213047;
+    
+    
+    
+}
+.tr2 .flex .view .path:hover{
+cursor: pointer;
+border-color: #2596be;
+}
+.tr2 .flex .view .path:hover{
+  cursor: pointer;
+color: #2596be;
+}
+th {
+    
+    padding: 5px;
+ 
+    font-size: 14px;
+    color: #213047;
+    align-items: center;
+    justify-content: center;
+    
+}
+.tr2{
+  margin-top: 2rem;
+}
+
+img {
+    width: 100px;
+    height: 50px;
+}
+.lablei {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f0f2f9;
+  border-radius: 8px;
+  border: 3px dotted #ddd;
+}
+
+.lablei svg {
+  width: 80px;
+  height: 80px;
+}
+
+.lablei p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+
+.lablei label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Additional styles for the input, adjust as needed */
+.lablei input {
+  margin-top: 10px; /* Adjust as needed */
+}
+
